@@ -12,7 +12,7 @@ Public Class Login
     Private Sub LogBTN_Click(sender As Object, e As EventArgs) Handles LogBTN.Click
         Try
             'Check if files are populates
-            If UsernameTXT.Text <> "" And PasswordTXT.Text <> "" Then
+            If (UsernameTXT.Text <> "" And PasswordTXT.Text <> "") Then
                 'open db
                 SQLiteConn.Open()
                 If SQLiteConn.State = ConnectionState.Open Then

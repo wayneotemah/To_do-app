@@ -29,12 +29,15 @@ Partial Class Signup
         Me.SingupEmailLBL = New System.Windows.Forms.Label()
         Me.SignUpEmailTXT = New System.Windows.Forms.TextBox()
         Me.SignUpBTN = New System.Windows.Forms.Button()
+        Me.PassowrdLBL = New System.Windows.Forms.Label()
+        Me.SignupPasswordTXT = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'SignUpNametxt
         '
         Me.SignUpNametxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.SignUpNametxt.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.SignUpNametxt.ForeColor = System.Drawing.SystemColors.Window
         Me.SignUpNametxt.Location = New System.Drawing.Point(251, 245)
         Me.SignUpNametxt.Multiline = True
         Me.SignUpNametxt.Name = "SignUpNametxt"
@@ -90,6 +93,7 @@ Partial Class Signup
         '
         Me.SignUpEmailTXT.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.SignUpEmailTXT.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.SignUpEmailTXT.ForeColor = System.Drawing.SystemColors.Window
         Me.SignUpEmailTXT.Location = New System.Drawing.Point(251, 314)
         Me.SignUpEmailTXT.Multiline = True
         Me.SignUpEmailTXT.Name = "SignUpEmailTXT"
@@ -108,12 +112,36 @@ Partial Class Signup
         Me.SignUpBTN.Text = "Sign Up"
         Me.SignUpBTN.UseVisualStyleBackColor = True
         '
+        'PassowrdLBL
+        '
+        Me.PassowrdLBL.AutoSize = True
+        Me.PassowrdLBL.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PassowrdLBL.ForeColor = System.Drawing.Color.White
+        Me.PassowrdLBL.Location = New System.Drawing.Point(99, 376)
+        Me.PassowrdLBL.Name = "PassowrdLBL"
+        Me.PassowrdLBL.Size = New System.Drawing.Size(91, 25)
+        Me.PassowrdLBL.TabIndex = 8
+        Me.PassowrdLBL.Text = "Password"
+        '
+        'SignupPasswordTXT
+        '
+        Me.SignupPasswordTXT.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.SignupPasswordTXT.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.SignupPasswordTXT.ForeColor = System.Drawing.SystemColors.Window
+        Me.SignupPasswordTXT.Location = New System.Drawing.Point(251, 382)
+        Me.SignupPasswordTXT.Multiline = True
+        Me.SignupPasswordTXT.Name = "SignupPasswordTXT"
+        Me.SignupPasswordTXT.Size = New System.Drawing.Size(183, 20)
+        Me.SignupPasswordTXT.TabIndex = 7
+        '
         'Signup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Purple
         Me.ClientSize = New System.Drawing.Size(1253, 537)
+        Me.Controls.Add(Me.PassowrdLBL)
+        Me.Controls.Add(Me.SignupPasswordTXT)
         Me.Controls.Add(Me.SignUpBTN)
         Me.Controls.Add(Me.SingupEmailLBL)
         Me.Controls.Add(Me.SignUpEmailTXT)
@@ -135,4 +163,6 @@ Partial Class Signup
     Friend WithEvents SingupEmailLBL As Label
     Friend WithEvents SignUpEmailTXT As TextBox
     Friend WithEvents SignUpBTN As Button
+    Friend WithEvents PassowrdLBL As Label
+    Friend WithEvents SignupPasswordTXT As TextBox
 End Class
