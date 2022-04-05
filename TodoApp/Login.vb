@@ -17,29 +17,39 @@ Public Class Login
                 SQLiteConn.Open()
                 If SQLiteConn.State = ConnectionState.Open Then
                     SQLitecmd.Connection = SQLiteConn
-                    SQLitecmd.CommandText = "SELECT Username,Password FROM User WHERE Username='" & UsernameTXT.Text & "';"
+                    SQLitecmd.CommandText = "SELECT Username,Password,Email FROM User WHERE Username='" & UsernameTXT.Text & "';"
                     Dim SQLiteReader As SQLiteDataReader = SQLitecmd.ExecuteReader
                     Using SQLiteReader
                         While (SQLiteReader.Read())
-                            'evauate user name and pass
+                            'evauate user name and pass info to mainform
                             If SQLiteReader("Username") = UsernameTXT.Text And SQLiteReader("Password") = PasswordTXT.Text Then
+
+
+                                Form1.AccUsernameTxt.Text = UsernameTXT.Text
+                                Form1.accountLKLB.Text = SQLiteReader("Email")
+
                                 Me.Hide()
                                 Form1.Show()
                             Else
                                 MsgBox("Incorrect details")
+
                                 UsernameTXT.Text = ""
                                 PasswordTXT.Text = ""
-
                             End If
                         End While
+                        'MsgBox("Incorrect details")
+                        UsernameTXT.Text = ""
+                        PasswordTXT.Text = ""
                     End Using
                 End If
                 SQLiteConn.Close()
             Else
                 MsgBox("Incorrect details")
+                UsernameTXT.Text = ""
+                PasswordTXT.Text = ""
             End If
         Catch ex As Exception
-            MsgBox("Faild database connection. Check and fix")
+            MsgBox(ex.ToString)
 
         End Try
 

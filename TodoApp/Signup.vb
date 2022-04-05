@@ -19,21 +19,19 @@ Public Class Signup
                 SQLiteConn.Open()
                 If SQLiteConn.State = ConnectionState.Open Then
 
-
-                    'Using SQLiteConn As New SQLiteConnection(connStr)
                     Dim Command As String = "INSERT into User(Email,Username,Password) VALUES(@Email,@Username,@Password);"
                     Dim SQLitecmd As New SQLiteCommand(Command, SQLiteConn)
                     SQLitecmd.Parameters.AddWithValue("@Email", SignUpEmailTXT.Text)
                     SQLitecmd.Parameters.AddWithValue("@Username", SignUpNametxt.Text)
                     SQLitecmd.Parameters.AddWithValue("@Password", SignupPasswordTXT.Text)
                     SQLitecmd.ExecuteNonQuery()
-                    'End Using
-                    MsgBox("Your account has been created ")
+
+                    MsgBox("Your account has been created. Please Login in ")
                     SignUpNametxt.Text = ""
                     SignupPasswordTXT.Text = ""
                     SignUpEmailTXT.Text = ""
-                    Me.Hide()
-                    Form1.Show()
+                    Me.Close()
+                    Login.Show()
 
                 End If
 
